@@ -1,0 +1,22 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int maxLength = 0;
+        // Array to store the last seen 1-based position of each character
+        int[] lastIndex = new int[256];
+
+        for (int right = 0, left = 0; right < s.length(); right++) {
+            char currentChar = s.charAt(right);
+
+            // If character was seen inside current window, jump left pointer past it
+            left = Math.max(left, lastIndex[currentChar]);
+
+            // Update max length of valid window
+            maxLength = Math.max(maxLength, right - left + 1);
+
+            // Store current index + 1
+            lastIndex[currentChar] = right + 1;
+        }
+
+        return maxLength;
+    }
+}
