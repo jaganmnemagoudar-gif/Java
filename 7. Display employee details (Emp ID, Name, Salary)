@@ -1,0 +1,12 @@
+
+public class Main {
+    public static void main(String[] args) {
+        int empId = 1001;
+        String name = "Rahul";
+        double salary = 25000.50;
+
+        System.out.println("Employee ID: " + empId);
+        System.out.println("Employee Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+}
